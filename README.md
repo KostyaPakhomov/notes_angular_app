@@ -1,6 +1,7 @@
 # Hosting
 
 Link to the app on Firebase [NotesAngularApp](https://notesangularapp.firebaseapp.com)
+Link to the app on Netlify [NotesAngularApp](https://notesangularapp.netlify.app)
 
 # NotesAngularApp
 
