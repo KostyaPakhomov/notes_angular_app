@@ -1,0 +1,36 @@
+<div class="wrapper_note"  [ngStyle]="{'width': ifBigNote ? bigNote.width : '190px',
+'height': ifBigNote ? bigNote.height : '160px',
+'z-index': ifBigNote ? bigNote.zIndex : '2',
+'position': ifBigNote ? bigNote.position : 'unset',
+'top': ifBigNote ? bigNote.top : 'none',
+'left': ifBigNote ? bigNote.left : 'none',
+'transform': ifBigNote ? bigNote.translate : 'none'}">
+  <div class="note">
+    <div class="note_area" (click)="showNote()" title="Сlick to display the contents of the note"
+         [ngStyle]="{'display': visible ? 'none' : 'flex','width': ifBigNote ? '90%' : '100%', 'cursor': ifBigNote ? 'default' : 'zoom-in'}">
+      <div class="note_name">{{note.noteName}}</div>
+      <pre class="note_text" [ngStyle]="{'display': visibleNote ? 'none':'inline-block'}">{{text}}</pre>
+      <pre class="note_text" [ngStyle]="{'display': visibleNote ? 'inline-block':'none'}">{{note.noteText}}</pre>
+      <div class="note_tag">{{note.noteTags}}</div>
+    </div>
+    <div class="note_area_change" [ngStyle]="{'display': visible ? 'flex' : 'none'}">
+      <input class="note_name input_name" [(ngModel)]="noteName">
+      <textarea class="note_text input_text" [(ngModel)]="noteText">{{noteText}}</textarea>
+      <input class="note_tag input_tag" [(ngModel)]="noteTags">
+      <div class="confirm_btn">
+        <div class="confirm" (click)="confirm(note)" title="Confirm changes"></div>
+        <div class="close" (click)="close()" title="Close the window"></div>
+      </div>
+    </div>
+    <div class="hide_buttons" [ngStyle]="{'display': visibleButtons ? 'flex':'none'}">
+      <div class="change_note" (click)="changeNote()" title="Change the content of a note"
+           [ngStyle]="{'display': visibleNote ? 'inline-block':'none'}">
+      </div>
+      <div class="hide_note" (click)="hideNote()" title="Close the window"
+           [ngStyle]="{'display': visibleNote ? 'inline-block':'none'}">
+      </div>
+    </div>
+    <div class="remove" (click)="deleteNote()" [ngStyle]="{'display': visibleDelete ? 'inline-block' : 'none'}"></div>
+    <div class="note_date">{{note.noteDate | date: 'dd.MM.yyyy HH:mm'}}</div>
+  </div>
+</div>

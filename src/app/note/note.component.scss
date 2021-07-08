@@ -1,0 +1,173 @@
+.wrapper_note {
+  width: 190px;
+  height: 160px;
+  border: 3px solid rgba(181,31,31,0.75);
+  position: relative;
+  margin: 0 20px 20px 0;
+  background: #F6F6F6;
+  box-shadow: 6px 6px 16px rgba(163,163,163,0.6),-8px -8px 16px #ffffff,inset 4px 4px 16px rgba(203,203,203,0.25);
+  border-radius: 5px;
+}
+.note_name {
+  width: 95%;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin: 5px auto 15px auto;
+}
+.note_text {
+  width: 90%;
+  font-size: 16px;
+  font-weight: lighter;
+  font-style: italic;
+  margin: 5px auto 20px auto;
+}
+.note_tag {
+  width: 95%;
+  color: dodgerblue;
+  margin: 0 auto;
+}
+.input_name {
+  width: 95%;
+  background: #fff;
+  border: 3px solid rgba(240,235,84,.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+  height: 15%;
+  padding: 8px;
+}
+.input_text {
+  width: 95%;
+  background: #fff;
+  border: 3px solid rgba(240,235,84,.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+  padding: 8px;
+  height: 30%;
+}
+.input_tag {
+  width: 95%;
+  background: #fff;
+  border: 3px solid rgba(240,235,84,.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+  height: 15%;
+  padding: 8px;
+}
+.note_area {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.note_area_change {
+  height: 100%;
+  border-radius: 2px;
+  width: 92%;
+  flex-direction: column;
+}
+.note {
+  position: relative;
+  height: 100%;
+  background-color: rgba(79,136,72,0.1);
+}
+.note_date {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.remove {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/delete.png")center center no-repeat;
+  background-size: 100%;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  z-index: 2;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2,1.2);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+}
+.confirm {
+  &:hover {
+    transform: scale(1.2,1.2);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/ok.png")center center no-repeat;
+  background-size: 100%;
+  margin-bottom: 10px;
+}
+.close {
+  &:hover {
+    transform: scale(1.2,1.2);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/cancel.png")center center no-repeat;
+  background-size: 100%;
+}
+.change_note {
+  &:hover {
+    transform: scale(1.2,1.2);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/change.png")center center no-repeat;
+  background-size: 100%;
+  margin-bottom: 10px;
+}
+.hide_note {
+  &:hover {
+    transform: scale(1.2,1.2);
+  }
+  &:active {
+    transform: scale(0.9,0.9);
+  }
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/cancel.png")center center no-repeat;
+  background-size: 100%;
+}
+.show_note_adding {
+  cursor: pointer;
+}
+.confirm_btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+  right: 3px;
+}
+.hide_buttons {
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+  right: 3px;
+  flex-direction: column;
+}
+@media all and(max-width:720px) {
+  .note_area_change {
+    width: 85%;
+  }
+}

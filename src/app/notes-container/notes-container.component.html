@@ -1,0 +1,36 @@
+<div class="wrapper_notes_container">
+  <button class="show_note_adding" (click)="show()"
+          [ngStyle]="{'display': visible ? 'none':'inline-block'}">
+    Add note
+  </button>
+  <div class="input-field" [ngStyle]="{'display': visible ? 'flex':'none'}">
+    <input class="input_noteName" type="text"
+             placeholder="Add note name" [(ngModel)]="noteName"
+             name="noteName">
+    <textarea class="input_noteText" id="textarea" rows="7" cols="30"
+              placeholder="Add note text" [(ngModel)]="noteText"
+              name="noteName">
+    </textarea>
+    <input class="input_noteTags" id="tagId" type="text" placeholder="Add note tags"
+           (keyup)="hashtag()" [(ngModel)]="noteTags"
+           name="noteName">
+    <button class="add_note" id="add_note" (click)="addNewNote()">Add new note</button>
+    <button class="close_note_adding" (click)="hide()">Close</button>
+  </div>
+
+  <ng-template #noNotes><div class="noNotes">No notes</div></ng-template>
+  <div class="notes" *ngIf="notes.length>0; else noNotes">
+    <input name="tags" type="text" class="searchNotes tag" id = "tag" (keypress)="matchVal($event)"
+           placeholder="Search..." [(ngModel)]="filterTerm">
+    <div class="notes_list">
+      <ng-container class="ng_container" *ngFor="let note of notes | filter:filterTerm; let i = index">
+        <app-note
+          [note] = note
+          (removeNote) = "removeNote($event, note)"
+          (confirmNote)="confirmNote($event, note)"
+        >
+        </app-note>
+      </ng-container>
+    </div>
+  </div>
+</div>
